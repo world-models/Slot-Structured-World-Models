@@ -48,7 +48,7 @@ class SlotAttention(nn.Module):
         else:
             slots = self.init_slots.weight.expand(b, -1, -1)
 
-        inputs = self.norm_input(inputs)        
+        inputs = self.norm_input(inputs)
         k, v = self.to_k(inputs), self.to_v(inputs)
 
         for _ in range(self.iters):
